@@ -16,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -54,6 +55,8 @@ public class MainFragment extends Fragment implements OnBackPressedListener {
     Toolbar toolbar;
     MainViewModel mViewModel;
 
+    AppCompatButton BtnGotoVizPage;
+
 
     public static MainFragment newInstance() {
         return new MainFragment();
@@ -86,7 +89,7 @@ public class MainFragment extends Fragment implements OnBackPressedListener {
 
         // Select Master tab as home
         tabLayout.selectTab(tabLayout.getTabAt(0));
-        navController.navigate(R.id.action_to_masterFragment);
+        navController.navigate(R.id.action_to_homeFragment);
 
         // Setup tabs for navigation
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -95,6 +98,9 @@ public class MainFragment extends Fragment implements OnBackPressedListener {
                 Log.i(TAG, "On Tab selected: " + tab.getText());
 
                 switch (tab.getText().toString()) {
+                    case "Home":
+                        navController.navigate(R.id.action_to_homeFragment);
+                        break;
                     case "Master":
                         navController.navigate(R.id.action_to_masterFragment);
                         break;
