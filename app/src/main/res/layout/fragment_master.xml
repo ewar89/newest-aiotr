@@ -191,7 +191,7 @@
             android:layout_height="wrap_content"
             android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="@+id/connectButton"
-            app:layout_constraintEnd_toEndOf="@+id/connectButton"
+            app:layout_constraintEnd_toStartOf="@+id/connectButton"
             app:layout_constraintStart_toStartOf="@+id/connectButton"
             app:layout_constraintTop_toTopOf="@+id/connectButton" />
 
@@ -238,6 +238,18 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/connectButton" />
+
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginStart="12dp"
+            android:text="BACK"
+            android:textColor="@color/black01dp"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/help_button" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

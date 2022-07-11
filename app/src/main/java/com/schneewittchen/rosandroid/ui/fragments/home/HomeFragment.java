@@ -27,11 +27,12 @@ import com.schneewittchen.rosandroid.ui.general.TabButton;
 public class HomeFragment extends Fragment {
 
     private static TabButton autoNav, settings, joystick, shc, robotArm, manualControl;
-    private AppCompatButton manualControlButton;
+//    private AppCompatButton manualControlButton;
+//    private AppCompatButton settingsButton;
 
 
     final public static String TAG = HomeFragment.class.getSimpleName();
-    NavController navController;
+//    NavController navController;
 
     @Nullable
     @org.jetbrains.annotations.Nullable
@@ -40,23 +41,30 @@ public class HomeFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_home, container, false);
         Log.d(TAG, "onCreateView: HOMEFRAGMENT CREATED. DICK AND BALLS INCLUDED. ");
 
+//        (autoNav = new TabButton(v.findViewById(R.id.autoNav))).linkToFragment(9, getParentFragmentManager().beginTransaction());
 
-    (autoNav = new TabButton(v.findViewById(R.id.autoNav))).linkToFragment(1, getParentFragmentManager().beginTransaction());
+        (settings = new TabButton(v.findViewById(R.id.settings))).linkToFragment(3, getParentFragmentManager().beginTransaction());
 
-    (settings = new TabButton(v.findViewById(R.id.settings))).linkToFragment(2, getParentFragmentManager().beginTransaction());
+        (shc = new TabButton(v.findViewById(R.id.shc))).linkToFragment(5, getParentFragmentManager().beginTransaction());
 
-       (shc = new TabButton(v.findViewById(R.id.shc))).linkToFragment(5, getParentFragmentManager().beginTransaction());
+        (robotArm = new TabButton(v.findViewById(R.id.robotArm))).linkToFragment(6, getParentFragmentManager().beginTransaction());
 
-       (robotArm = new TabButton(v.findViewById(R.id.robotArm))).linkToFragment(6, getParentFragmentManager().beginTransaction());
+        (manualControl = new TabButton(v.findViewById(R.id.manualControl))).linkToFragment(9, getParentFragmentManager().beginTransaction());
 
-    //    (manualControl = new TabButton(v.findViewById(R.id.manualControl))).linkToFragment(7, getParentFragmentManager().beginTransaction());
+//        manualControlButton = (AppCompatButton) (v.findViewById(R.id.manualControl));
+//        manualControlButton.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View v) {
+//                navController.navigate(R.id.action_to_vizFragment);
+//            }
+//        });
+//
+//        settingsButton = (AppCompatButton) (v.findViewById(R.id.settings));
+//        settingsButton.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View v) {
+//                navController.navigate(R.id.action_to_masterFragment);
+//            }
+//        });
 
-        manualControlButton = (AppCompatButton) (v.findViewById(R.id.manualControl));
-        manualControlButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                navController.navigate(R.id.action_to_vizFragment);
-            }
-        });
 
         return v;
     }
@@ -65,7 +73,7 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull @NotNull View view, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        navController = Navigation.findNavController(requireActivity(), R.id.fragment_container);
+//        navController = Navigation.findNavController(requireActivity(), R.id.fragment_container);
 
         //navController.navigate(R.id.action_to_masterFragment)
 

@@ -22,6 +22,7 @@ import com.google.android.material.textfield.TextInputLayout;
 import com.schneewittchen.rosandroid.R;
 import com.schneewittchen.rosandroid.databinding.FragmentMasterBinding;
 import com.schneewittchen.rosandroid.model.repositories.rosRepo.connection.ConnectionType;
+import com.schneewittchen.rosandroid.ui.general.TabButton;
 import com.schneewittchen.rosandroid.utility.Utils;
 import com.schneewittchen.rosandroid.viewmodel.MasterViewModel;
 
@@ -54,6 +55,8 @@ public class MasterFragment extends Fragment implements TextView.OnEditorActionL
     protected TextInputLayout ipAddressLayout;
     private ArrayAdapter<String> ipArrayAdapter;
 
+    private static TabButton backBtn;
+
     public static MasterFragment newInstance() {
         Log.i(TAG, "New Master Fragment");
         return new MasterFragment();
@@ -65,6 +68,8 @@ public class MasterFragment extends Fragment implements TextView.OnEditorActionL
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         binding = FragmentMasterBinding.inflate(inflater, container, false);
+
+        (backBtn = new TabButton(binding.getRoot().findViewById(R.id.backButton))).linkToFragment(0, getParentFragmentManager().beginTransaction());
 
         return binding.getRoot();
     }

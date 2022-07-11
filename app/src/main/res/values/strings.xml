@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ROS-Mobile</string>
+    <string name="app_name">Wheelchair</string>
 
     <string name="add_widget">Add widget</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -83,5 +83,6 @@
     <string name="home">Home</string>
     <string name="settings">Settings</string>
     <string name="master">master</string>
+    <string name="back">BACK</string>
 
 </resources>

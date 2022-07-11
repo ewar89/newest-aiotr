@@ -9,8 +9,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import com.schneewittchen.rosandroid.R;
+import com.schneewittchen.rosandroid.ui.fragments.home.HomeFragment;
 import com.schneewittchen.rosandroid.ui.fragments.intro.IntroFragment;
 import com.schneewittchen.rosandroid.ui.fragments.main.MainFragment;
 import com.schneewittchen.rosandroid.ui.fragments.main.OnBackPressedListener;
@@ -59,21 +61,26 @@ public class MainActivity extends AppCompatActivity {
         }
 
         this.requestPermissions();
+        HomeFragment homeFrag = new HomeFragment();
+        FragmentManager fm = getSupportFragmentManager();
+        fm.beginTransaction().add(R.id.main_container, homeFrag).commit();
     }
 
     @Override
     public void onBackPressed(){
-        Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.main_container);
+//        Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.main_container);
+//
+//        if(fragment instanceof OnBackPressedListener) {
+//            OnBackPressedListener listener = (OnBackPressedListener)fragment;
+//
+//            if (listener.onBackPressed()){
+//                return;
+//            }
+//        }
 
-        if(fragment instanceof OnBackPressedListener) {
-            OnBackPressedListener listener = (OnBackPressedListener)fragment;
+        getSupportFragmentManager().beginTransaction().replace(R.id.main_container, new HomeFragment()).commit();
 
-            if (listener.onBackPressed()){
-                return;
-            }
-        }
-
-        super.onBackPressed();
+//        super.onBackPressed();
 
     }
 

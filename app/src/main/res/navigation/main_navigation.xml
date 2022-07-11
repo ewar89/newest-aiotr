@@ -53,8 +53,7 @@
     <fragment
         android:id="@+id/vizFragment"
         android:name="com.schneewittchen.rosandroid.ui.fragments.viz.VizFragment"
-        android:label="VizFragment"
-        tools:layout="@layout/fragment_viz" />
+        android:label="VizFragment" />
 
     <action
         android:id="@+id/action_to_vizFragment"
