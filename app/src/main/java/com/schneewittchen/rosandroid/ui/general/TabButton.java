@@ -48,27 +48,24 @@ public class TabButton {
                         ft.replace(R.id.main_container, new HomeFragment());
                         break;
                     case 1:
-                        //ft.replace(R.id.main_container, new MapxusFragment());
-                        break;
-                    case 2:
                         ft.replace(R.id.main_container, new SettingsFragment());
                         break;
-                    case 3:
+                    case 2:
                         ft.replace(R.id.main_container, new MasterFragment());
                         break;
-                    case 4:
+                    case 3:
                         ft.replace(R.id.main_container, new SshFragment());
                         break;
-                    case 5:
+                    case 4:
                         ft.replace(R.id.main_container, new SmartHomeControlFragment());
                         break;
-                    case 6:
+                    case 5:
                         ft.replace(R.id.main_container, new RobotarmFragment());
                         break;
-                    case 7:
+                    case 6:
                         ft.replace(R.id.main_container, new VizFragment());
                         break;
-                    case 8:
+                    case 7:
                         ft.replace(R.id.main_container, new DetailMainFragment());
                         break;
                     default:

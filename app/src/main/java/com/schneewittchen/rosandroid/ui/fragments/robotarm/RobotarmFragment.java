@@ -10,11 +10,10 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.schneewittchen.rosandroid.R;
+import com.schneewittchen.rosandroid.ui.general.TabButton;
 //import com.schneewittchen.rosandroid.ui.fragments.map.MapxusFragment;
 
 import org.jetbrains.annotations.NotNull;
-
-import com.schneewittchen.rosandroid.ui.general.TabButton;
 
 public class RobotarmFragment extends Fragment {
 
