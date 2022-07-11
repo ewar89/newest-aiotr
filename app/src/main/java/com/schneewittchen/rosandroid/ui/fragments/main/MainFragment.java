@@ -74,8 +74,6 @@ public class MainFragment extends Fragment implements OnBackPressedListener {
 
         drawerLayout.setScrimColor(getResources().getColor(R.color.drawerFadeColor));
 
-
-
         // Connect toolbar to application
 //        if (getActivity() instanceof AppCompatActivity) {
 //

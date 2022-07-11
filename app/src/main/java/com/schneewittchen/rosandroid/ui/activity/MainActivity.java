@@ -1,9 +1,14 @@
 package com.schneewittchen.rosandroid.ui.activity;
 
 import android.Manifest;
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -64,6 +69,21 @@ public class MainActivity extends AppCompatActivity {
         HomeFragment homeFrag = new HomeFragment();
         FragmentManager fm = getSupportFragmentManager();
         fm.beginTransaction().add(R.id.main_container, homeFrag).commit();
+    }
+
+    public void openMap(View view){
+
+        Intent mIntent = getPackageManager().getLaunchIntentForPackage("com.johnnyhoichuen.rosandroid");
+        if (mIntent != null) {
+            try {
+                startActivity(mIntent);
+            } catch (ActivityNotFoundException err) {
+                Toast t = Toast.makeText(getApplicationContext(),
+                        "App is not found", Toast.LENGTH_SHORT);
+                t.show();
+            }
+        }
+
     }
 
     @Override
