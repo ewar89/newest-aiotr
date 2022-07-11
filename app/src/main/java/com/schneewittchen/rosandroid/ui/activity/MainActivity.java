@@ -45,8 +45,8 @@ public class MainActivity extends AppCompatActivity {
                         .replace(R.id.main_container, IntroFragment.newInstance())
                         .commitNow();
             } else {
-                Toolbar myToolbar = findViewById(R.id.toolbar);
-                setSupportActionBar(myToolbar);
+//                Toolbar myToolbar = findViewById(R.id.toolbar);
+//                setSupportActionBar(myToolbar);
 
                 if (savedInstanceState == null) {
                     getSupportFragmentManager().beginTransaction()

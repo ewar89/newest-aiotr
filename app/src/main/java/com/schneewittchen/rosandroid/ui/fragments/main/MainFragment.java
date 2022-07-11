@@ -49,10 +49,10 @@ public class MainFragment extends Fragment implements OnBackPressedListener {
 
     public static final String TAG = MainFragment.class.getSimpleName();
 
-    TabLayout tabLayout;
+//    TabLayout tabLayout;
     NavController navController;
     DrawerLayout drawerLayout;
-    Toolbar toolbar;
+//    Toolbar toolbar;
     MainViewModel mViewModel;
 
     AppCompatButton BtnGotoVizPage;
@@ -65,65 +65,68 @@ public class MainFragment extends Fragment implements OnBackPressedListener {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        tabLayout = view.findViewById(R.id.tabs);
-        toolbar = view.findViewById(R.id.toolbar);
+//        tabLayout = view.findViewById(R.id.tabs);
+//        toolbar = view.findViewById(R.id.toolbar);
+
         drawerLayout = view.findViewById(R.id.drawer_layout);
 
         navController = Navigation.findNavController(requireActivity(), R.id.fragment_container);
 
         drawerLayout.setScrimColor(getResources().getColor(R.color.drawerFadeColor));
 
+
+
         // Connect toolbar to application
-        if (getActivity() instanceof AppCompatActivity) {
-
-            AppCompatActivity activity = (AppCompatActivity) getActivity();
-            activity.setSupportActionBar(toolbar);
-
-            // Setup home indicator to open drawer layout
-            ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(activity, drawerLayout, toolbar,
-                    R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-
-            drawerLayout.addDrawerListener(toggle);
-            toggle.syncState();
-        }
+//        if (getActivity() instanceof AppCompatActivity) {
+//
+//            AppCompatActivity activity = (AppCompatActivity) getActivity();
+//            activity.setSupportActionBar(toolbar);
+//
+//            // Setup home indicator to open drawer layout
+//            ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(activity, drawerLayout, toolbar,
+//                    R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+//
+//            drawerLayout.addDrawerListener(toggle);
+//            toggle.syncState();
+//        }
 
         // Select Master tab as home
-        tabLayout.selectTab(tabLayout.getTabAt(0));
+//        tabLayout.selectTab(tabLayout.getTabAt(0));
         navController.navigate(R.id.action_to_homeFragment);
 
         // Setup tabs for navigation
-        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                Log.i(TAG, "On Tab selected: " + tab.getText());
+//        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+//            @Override
+//            public void onTabSelected(TabLayout.Tab tab) {
+//                Log.i(TAG, "On Tab selected: " + tab.getText());
+//
+//                switch (tab.getText().toString()) {
+//                    case "Home":
+//                        navController.navigate(R.id.action_to_homeFragment);
+//                        break;
+//                    case "Master":
+//                        navController.navigate(R.id.action_to_masterFragment);
+//                        break;
+//                    case "Details":
+//                        navController.navigate(R.id.action_to_detailFragment);
+//                        break;
+//                    case "SSH":
+//                        navController.navigate(R.id.action_to_sshFragment);
+//                        break;
+//                    default:
+//                        navController.navigate(R.id.action_to_vizFragment);
+//                }
+//            }
 
-                switch (tab.getText().toString()) {
-                    case "Home":
-                        navController.navigate(R.id.action_to_homeFragment);
-                        break;
-                    case "Master":
-                        navController.navigate(R.id.action_to_masterFragment);
-                        break;
-                    case "Details":
-                        navController.navigate(R.id.action_to_detailFragment);
-                        break;
-                    case "SSH":
-                        navController.navigate(R.id.action_to_sshFragment);
-                        break;
-                    default:
-                        navController.navigate(R.id.action_to_vizFragment);
-                }
-            }
+//            @Override
+//            public void onTabUnselected(TabLayout.Tab tab) {
+//            }
+//
+//            @Override
+//            public void onTabReselected(TabLayout.Tab tab) {
+//            }
+        };
 
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-            }
-
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-            }
-        });
-    }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
@@ -135,16 +138,16 @@ public class MainFragment extends Fragment implements OnBackPressedListener {
             mViewModel.createFirstConfig(this.getArguments().getString("configName"));
         }
 
-        mViewModel.getConfigTitle().observe(getViewLifecycleOwner(), this::setTitle);
+//        mViewModel.getConfigTitle().observe(getViewLifecycleOwner(), this::setTitle);
     }
 
-    private void setTitle(String newTitle) {
-        if (newTitle.equals(toolbar.getTitle().toString())) {
-            return;
-        }
-
-        toolbar.setTitle(newTitle);
-    }
+//    private void setTitle(String newTitle) {
+//        if (newTitle.equals(toolbar.getTitle().toString())) {
+//            return;
+//        }
+//
+//        toolbar.setTitle(newTitle);
+//    }
 
     public boolean onBackPressed() {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
