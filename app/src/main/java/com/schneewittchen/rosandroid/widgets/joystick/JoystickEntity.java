@@ -33,10 +33,11 @@ public class JoystickEntity extends PublisherWidgetEntity {
         this.publishRate = 20f;
         this.xAxisMapping = "Angular/Z";
         this.yAxisMapping = "Linear/X";
-        this.xScaleLeft = 1;
-        this.xScaleRight = -1;
-        this.yScaleLeft = -1;
-        this.yScaleRight = 1;
+        float vroom_vroom = 2f;
+        this.xScaleLeft = 1*vroom_vroom;
+        this.xScaleRight = -1*vroom_vroom;
+        this.yScaleLeft = -1*vroom_vroom;
+        this.yScaleRight = 1*vroom_vroom;
     }
 
 }
