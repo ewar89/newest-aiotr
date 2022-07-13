@@ -161,7 +161,7 @@ public class ConfigRepositoryImpl implements ConfigRepository {
 
     @Override
     public void createWidget(Long parentId, String widgetType) {
-        BaseEntity widget = getWidgetFromType("Joystick");
+        BaseEntity widget = getWidgetFromType(widgetType);
         if (widget == null) return;
 
         else if (widget instanceof I2DLayerEntity) {
@@ -234,7 +234,7 @@ public class ConfigRepositoryImpl implements ConfigRepository {
         }
 
         BaseEntity widget = (BaseEntity) object;
-        long configId = 1;
+        long configId = mCurrentConfigId.getValue();
 
         String widgetName = "";
         for (int count = 1; count > 0; count++) {

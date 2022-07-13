@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void openMap(View view){
 
-        Intent mIntent = getPackageManager().getLaunchIntentForPackage("io.liphy.vlcips.checkin");
+        Intent mIntent = getPackageManager().getLaunchIntentForPackage("com.johnnyhoichuen.rosandroid");
         if (mIntent != null) {
             try {
                 startActivity(mIntent);

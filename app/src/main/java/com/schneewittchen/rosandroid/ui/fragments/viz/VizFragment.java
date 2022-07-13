@@ -16,7 +16,6 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.google.android.material.switchmaterial.SwitchMaterial;
 import com.schneewittchen.rosandroid.R;
-import com.schneewittchen.rosandroid.viewmodel.DetailsViewModel;
 import com.schneewittchen.rosandroid.viewmodel.VizViewModel;
 import com.schneewittchen.rosandroid.ui.general.DataListener;
 import com.schneewittchen.rosandroid.ui.general.WidgetChangeListener;
@@ -42,7 +41,7 @@ public class VizFragment extends Fragment implements DataListener, WidgetChangeL
     private DrawerLayout drawerLayout;
     private ImageButton optionsOpenButton;
     private SwitchMaterial vizEditModeSwitch;
-    private DetailsViewModel viewModel;
+
 
     public static VizFragment newInstance() {
         return new VizFragment();
