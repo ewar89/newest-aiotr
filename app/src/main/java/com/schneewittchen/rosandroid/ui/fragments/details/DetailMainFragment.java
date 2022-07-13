@@ -79,7 +79,7 @@ public class DetailMainFragment extends Fragment
         recyclerView = view.findViewById(R.id.recyclerview);
         addWidgetCard = view.findViewById(R.id.add_widget_card);
 
-        navController = Navigation.findNavController(view);
+//        navController = Navigation.findNavController(view);
 
         // React on new widget click action
         addWidgetCard.setOnClickListener(v -> showDialogWithWidgetNames());
@@ -110,7 +110,8 @@ public class DetailMainFragment extends Fragment
         Log.i(TAG, "Clicked " + entity.name);
 
         viewModel.select(entity.id);
-        navController.navigate(R.id.action_detailOverview_to_depth1);
+//        navController.navigate(R.id.action_detailOverview_to_depth1);
+        getParentFragmentManager().beginTransaction().replace(R.id.main_container, new DetailContentFragment());;
     }
 
     private void showDialogWithWidgetNames() {
