@@ -52,6 +52,7 @@ public class DetailsViewModel extends AndroidViewModel {
 
 
     public void createWidget(String selectedText) {
+        Log.d(TAG, "onViewCreated: "+"bruhbrub");
         rosDomain.createWidget(getParentId(0), selectedText);
     }
 

@@ -27,6 +27,7 @@ import com.google.android.material.snackbar.Snackbar;
 import com.schneewittchen.rosandroid.R;
 import com.schneewittchen.rosandroid.model.entities.widgets.BaseEntity;
 import com.schneewittchen.rosandroid.ui.fragments.main.OnBackPressedListener;
+import com.schneewittchen.rosandroid.ui.general.TabButton;
 import com.schneewittchen.rosandroid.ui.general.WidgetChangeListener;
 import com.schneewittchen.rosandroid.utility.Utils;
 import com.schneewittchen.rosandroid.viewmodel.DetailsViewModel;
@@ -79,7 +80,7 @@ public class DetailMainFragment extends Fragment
         recyclerView = view.findViewById(R.id.recyclerview);
         addWidgetCard = view.findViewById(R.id.add_widget_card);
 
-        navController = Navigation.findNavController(view);
+//        navController = Navigation.findNavController(view);
 
         // React on new widget click action
         addWidgetCard.setOnClickListener(v -> showDialogWithWidgetNames());
@@ -104,6 +105,8 @@ public class DetailMainFragment extends Fragment
 
         viewModel.widgetsEmpty().observe(getViewLifecycleOwner(), empty ->
                 noWidgetTextView.setVisibility(empty ? View.VISIBLE : View.GONE));
+//        TabButton settingButton = new TabButton(view.findViewById(R.id.settings_widgets));
+//        settingButton.linkToFragment(2, getParentFragmentManager().beginTransaction());
     }
 
     private void onWidgetClicked(BaseEntity entity) {
